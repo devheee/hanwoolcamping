@@ -110,6 +110,7 @@ h6 {
     line-height: 100px;
 }
 
+
 .header h1 img {
     height: 70px;
 }
@@ -173,14 +174,35 @@ h6 {
 }
 
 @media (max-width:768px) {
-    .header h1 img {
+
+    .header.on .head_container .inner {
+        height: 100px;
+    }
+
+    .header h1 {
         position: relative;
         z-index: 1001;
     }
 
+    .header.on h1 {
+        position: fixed;
+    }
+
+    .header.on::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+
+        background: rgba(0, 0, 0, 0.75);
+        z-index: 1000;
+    }
+
     .header .gnb {
         position: fixed;
-        left: 0;
+        left: -100%;
         top: 0;
         z-index: 1000;
 
@@ -188,6 +210,12 @@ h6 {
         height: 100vh;
         background: #fff;
         border-right: 1px solid #ddd;
+
+        /* transition: 0.5s; */
+    }
+
+    .header.on .gnb {
+        left: 0;
     }
 
     .header .gnb>ul {
@@ -222,8 +250,12 @@ h6 {
         opacity: 1;
         visibility: visible;
 
-        /* display: none; */
+        display: none;
 
+    }
+
+    .header .gnb>ul>li .submenu.on {
+        display: block;
     }
 
     .header .gnb>ul>li:hover .submenu {
@@ -571,6 +603,7 @@ h6 {
     position: fixed;
     top: 55px;
     right: 10px;
+    z-index: 1002;
     border: none;
     background: transparent;
 
@@ -607,6 +640,18 @@ h6 {
     height: 100%;
     background: linear-gradient(to left, transparent 50%, #337689 50%);
 }
+
+@media (max-width:768px) {
+    #sub .sub_banner::before {
+        background: #337689;
+    }
+
+    #sub .sub_banner .inner {
+        position: relative;
+        z-index: 1;
+    }
+}
+
 
 #sub .sub_banner strong {
     margin: 0 0 10px 0;
@@ -663,6 +708,14 @@ h6 {
     border-right: 1px solid #ddd;
 }
 
+@media (max-width:768px) {
+
+    #sub .sub_container .article {
+        padding: 50px 0 100px 0;
+        border-right: none;
+    }
+}
+
 #sub .sub_container .article h3 {
     line-height: 50px;
     font-size: 18px;
@@ -680,6 +733,12 @@ h6 {
 #sub .sub_container .aside {
     flex: 3;
     padding: 50px 0 100px 50px;
+}
+
+@media (max-width:768px) {
+    #sub .sub_container .aside {
+        padding: 50px 0 100px 0;
+    }
 }
 
 #sub .aside_menu {
