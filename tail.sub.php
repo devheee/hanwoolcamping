@@ -11,7 +11,7 @@ if (!defined('_GNUBOARD_'))
 
 
 <script src="<?php echo G5_THEME_URL; ?>/js/slick.min.js"></script>
-<script src="<?php echo G5_THEME_URL; ?>/js/main.js"></script>
+<script src="<?php echo G5_THEME_URL; ?>/js/main.js?ver=1.2"></script>
 
 
 

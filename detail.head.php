@@ -52,6 +52,6 @@ if ($board['bo_table'] == 'gal') {
                         echo $page_title;
                     }
                     ?>
-                    <span> /<?= $cate_title ?></span>
+                    <span> / <?= $cate_title ?></span>
                 </h3>
                 <div class="content">
